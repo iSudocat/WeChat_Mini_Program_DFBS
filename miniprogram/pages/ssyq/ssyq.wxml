@@ -1,0 +1,12 @@
+
+<view class="menucontainer">
+  <view class='menuitem' wx:for="{{menulist}}" wx:for-index="idx" wx:for-item="menu">
+    <view class='menuview'>
+      <navigator url="">
+      <image class='menuimg' src='{{menu.img}}'/>
+      </navigator>
+    </view>
+    <view style="padding-top: 5px;">{{menu.name}}</view>
+  </view>
+</view>
+
