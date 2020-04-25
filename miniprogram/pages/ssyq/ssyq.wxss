@@ -2,33 +2,6 @@
 
 @import "../../style/guide.wxss";
 
-.hotgoodcontainer{
-  display:flex;
-  flex-wrap: wrap;
-  width:100%;
-  padding-top: 50px;
-}
-
-.gooditem{
-  width:50%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  font-size:12px;
-  box-sizing:border-box;
-  border: 0.5px solid #e2e2e3;
-  padding-bottom:50px;
-  padding-top: 50px;
-}
-.productimg{
- width:80px;
- height:80px;
-}
-.imgview{
-width:80px;
-height:80px;
-}
 
 .menucontainer{
   display:flex;
@@ -40,20 +13,94 @@ height:80px;
   align-content: space-between;
 }
 
-.menuitem{
-  width:40%;
+.datacontainer{
+  
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   justify-content:space-around;
   align-items:center;
-  font-size:20px;
+  flex-wrap:wrap;
   box-sizing:border-box;
-  padding-bottom:20px;
-  padding-top: 20px;
-  border: 2px solid #aaaaaa;
-  border-radius:20px;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
   margin-top: 20px;
+  
 }
+
+.item1{
+  width:31%;
+  background-color: #fce4e4;
+  border: 5rpx solid #fce4e4;
+  border-radius:10rpx;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+} 
+
+.item2{
+  width:31%;
+  background-color: #e6f8ed;
+  border: 5rpx solid #e6f8ed;
+  border-radius:10rpx;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+.item3{
+  width:31%;
+  background-color: #e8f2f8;
+  border: 5rpx solid #e8f2f8;
+  border-radius:10rpx;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+.item4{
+  width:31%;
+  background-color: #fde5e5;
+  border: 5rpx solid #fde5e5;
+  border-radius:10rpx;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+.item5{
+  width:31%;
+  background-color: #fae7f1;
+  border: 5rpx solid #fae7f1;
+  border-radius:10rpx;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+.item6{
+  width:31%;
+  background-color: #fbece4;
+  border: 5rpx solid #fbece4;
+  border-radius:10rpx;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+.txtview{
+  
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bview{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+}
+
 .menuimg{
  width:60px;
  height:60px;

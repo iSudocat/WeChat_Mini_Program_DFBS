@@ -11,39 +11,65 @@ exports.main = (event, context) => {
 
 Page({
   data: {
-    menulist:[
-      {
-        "name":"实时疫情",
-        "img":"images/ssyq.png"
-      },
-      {
-        "name":"同行查询",
-        "img":"images/txcx.png"
-      },
-      {
-        "name":"定点医院",
-        "img":"images/ddyy.png"
-      },
-      {
-        "name":"心理疏导",
-        "img":"images/xlsd.png"
-      },
-      {
-        "name":"辟谣求真",
-        "img":"images/pyqz.png"
-      },
-      {
-        "name":"疫情科普",
-        "img":"images/yqkp.png"
-      },
-    ]
+    
   },
 
   onLoad: function (options) {
-
+    this.getdata()
+    //this.setData({ 'display': 'flex' })
   },
 
-  copyCode: function() {
+  getdata: function () {
+    var t = this
+    console.log('获取数据')
+    wx.cloud.callFunction({
+      name: 'http'
+    })
+      .then(res => {
+        console.log(res.result)
+        var data = res.result
+        var today = {}
+        if (data.chinaTotal.today.input >= 0)
+          today.input = "+" + data.chinaTotal.today.input
+        else
+          today.input = data.chinaTotal.today.input
+        if (data.chinaTotal.extData.incrNoSymptom >= 0)
+          today.noSymptom = "+" + data.chinaTotal.extData.incrNoSymptom
+        else
+          today.noSymptom = data.chinaTotal.extData.incrNoSymptom
+        if (data.chinaTotal.today.storeConfirm >= 0)
+          today.storeConfirm = "+" + data.chinaTotal.today.storeConfirm
+        else
+          today.storeConfirm = data.chinaTotal.today.storeConfirm
+        if (data.chinaTotal.today.confirm >= 0)
+          today.confirm = "+" + data.chinaTotal.today.confirm
+        else
+          today.confirm = data.chinaTotal.today.confirm
+        if (data.chinaTotal.today.dead >= 0)
+          today.dead = "+" + data.chinaTotal.today.dead
+        else
+          today.dead = data.chinaTotal.today.dead
+        if (data.chinaTotal.today.heal >= 0)
+          today.heal = "+" + data.chinaTotal.today.heal
+        else
+          today.heal = data.chinaTotal.today.heal
+
+        var total = {}
+        total.input = data.chinaTotal.total.input
+        total.noSymptom = data.chinaTotal.extData.noSymptom
+        total.confirm = data.chinaTotal.total.confirm
+        total.dead = data.chinaTotal.total.dead
+        total.heal = data.chinaTotal.total.heal
+
+        t.setData({ 'today': today })
+        t.setData({ 'total': total })
+        t.setData({ 'lastUpdateTime': data.lastUpdateTime })
+        t.setData({ 'ok': 1 })
+      })
+      .catch(console.error)
+  },
+
+  copyCode: function () {
     wx.setClipboardData({
       data: code,
       success: function () {

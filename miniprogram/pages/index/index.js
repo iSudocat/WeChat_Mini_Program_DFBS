@@ -14,8 +14,8 @@ Page({
     menulist:[
       {
         "name":"实时疫情",
-        "img":"images/ssyq.png"
-        //"navurl":"../ssyq/ssyq"
+        "img":"images/ssyq.png",
+        "navurl":"../ssyq/ssyq"
       },
       {
         "name":"同行查询",
@@ -41,20 +41,16 @@ Page({
     ]
   },
 
-  Query:function(what){
-    console.log("Query")
-    const db = wx.cloud.database();
-    db.collection('2019ncov').where({
-     t_no:"G572"
+  Query:function(){
+    console.log('ceshi')
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'http'
     })
-    .get({
-      success: function(res) {
-        console.log(res.data)
-      },
-      fail: err => {
-        console.error('失败：', err)
-      }
+    .then(res => {
+      console.log(res.result) 
     })
+    .catch(console.error)
 
   },
 

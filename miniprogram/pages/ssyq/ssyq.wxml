@@ -1,12 +1,72 @@
 
-<view class="menucontainer">
-  <view class='menuitem' wx:for="{{menulist}}" wx:for-index="idx" wx:for-item="menu">
-    <view class='menuview'>
-      <navigator url="">
-      <image class='menuimg' src='{{menu.img}}'/>
-      </navigator>
-    </view>
-    <view style="padding-top: 5px;">{{menu.name}}</view>
-  </view>
-</view>
 
+
+<view class="datacontainer" wx:if="{{ok==1}}">
+  <view class='item1'>
+    <view class='txtview'>
+      <view style="font-size: 14px;">累计确诊</view>
+      <view style="font-size: 25px; color:#cc1e1e;">{{total.confirm}}</view>
+      <view class='bview'>
+        <view style="font-size: 12px;">较昨日</view>
+        <view style="font-size: 12px; color:#cc1e1e;">{{today.confirm}}</view>
+      </view>
+    </view> 
+  </view>
+
+  <view class='item2'>
+    <view class='txtview'>
+      <view style="font-size: 14px;">累计治愈</view>
+      <view style="font-size: 25px; color:#178b50;">{{total.heal}}</view>
+      <view class='bview'>
+        <view style="font-size: 12px;">较昨日</view>
+        <view style="font-size: 12px; color:#178b50;">{{today.heal}}</view>
+      </view>
+    </view> 
+  </view>
+
+  <view class='item3'>
+    <view class='txtview'>
+      <view style="font-size: 14px;">累计死亡</view>
+      <view style="font-size: 25px; color:#4e5a65;">{{total.dead}}</view>
+      <view class='bview'>
+        <view style="font-size: 12px;">较昨日</view>
+        <view style="font-size: 12px; color:#4e5a65;">{{today.dead}}</view>
+      </view>
+    </view> 
+  </view>
+
+  <view class='item4'>
+    <view class='txtview'>
+      <view style="font-size: 14px;">现有确诊</view>
+      <view style="font-size: 25px; color:#f23a3b;">{{total.confirm-total.heal-total.dead}}</view>
+      <view class='bview'>
+        <view style="font-size: 12px;">较昨日</view>
+        <view style="font-size: 12px; color:#f23a3b;">{{today.storeConfirm}}</view>
+      </view>
+    </view> 
+  </view>
+
+  <view class='item5'>
+    <view class='txtview'>
+      <view style="font-size: 14px;">无症状感染者</view>
+      <view style="font-size: 25px; color:#ca3f81;">{{total.noSymptom}}</view>
+      <view class='bview'>
+        <view style="font-size: 12px;">较昨日</view>
+        <view style="font-size: 12px; color:#ca3f81;">{{today.noSymptom}}</view>
+      </view>
+    </view> 
+  </view>
+  
+  <view class='item6'>
+    <view class='txtview'>
+      <view style="font-size: 14px;">境外输入</view>
+      <view style="font-size: 25px; color:#f05926;">{{total.input}}</view>
+      <view class='bview'>
+        <view style="font-size: 12px;">较昨日</view>
+        <view style="font-size: 12px; color:#f05926;">{{today.input}}</view>
+      </view>
+    </view> 
+  </view>
+
+  <view style="font-size: 15px; color:#616161;">最后更新时间：{{lastUpdateTime}}</view>
+</view>

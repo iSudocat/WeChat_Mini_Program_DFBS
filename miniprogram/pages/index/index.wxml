@@ -10,4 +10,4 @@
   </view>
 </view>
 
-<button bindtap="Query">查询</button>
+<!-- <button bindtap="Query">查询</button> -->
