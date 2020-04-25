@@ -45,7 +45,9 @@ Page({
   SearchInput: function (e) {
     this.setData({
       searchname: e.detail.value
+      
     })
+    this.btn_search()
   },
 
 

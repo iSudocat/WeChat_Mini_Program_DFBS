@@ -6,7 +6,9 @@
       <image class='menuimg' src='{{menu.img}}'/>
       </navigator>
     </view>
-    <view style="padding-top: 5px;">{{menu.name}}</view>
+    <navigator url="{{menu.navurl}}">
+     <view style="padding-top: 5px;">{{menu.name}}</view>
+    </navigator>
   </view>
 </view>
 

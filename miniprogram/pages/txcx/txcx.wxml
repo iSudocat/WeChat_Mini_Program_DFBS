@@ -14,9 +14,7 @@
 <view class="tfcontainer">
   <view class='tfitem' wx:for="{{source}}" wx:for-index="idx" wx:for-item="tf">
     <view class='tfview'>
-      <navigator url="">
       <image class='tfimg' src='{{tf.img}}'/>
-      </navigator>
     </view>
     <view class='tftxtview'>
       <view style="padding-top: 5px;">{{tf.date}}</view>
