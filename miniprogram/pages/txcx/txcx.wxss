@@ -1,0 +1,83 @@
+/* pages/addFunction/addFunction.wxss */
+
+@import "../../style/guide.wxss";
+
+
+
+.tfcontainer{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  height:100%;
+  width:100%;
+  justify-content:space-around;
+  align-content: space-between;
+}
+
+.searchcontainer{
+  padding-top: 20px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  height:60px;
+  width:100%;
+  justify-content:center;
+}
+
+.inputview{
+  width:70%;
+}
+.btnview{
+  width:10%;
+}
+.weui-input{
+  height:60rpx;
+  width:100%;
+  border: 1.5px solid #8ec6c5;
+  border-radius:8px;
+  font-size:30rpx;
+}
+
+.btn-search{
+  
+  vertical-align:middle;
+  text-align: center;
+  border-radius: 20rpx;
+  
+}
+.img-search{
+  
+  width:40rpx;
+  height:40rpx;
+}
+
+.tfitem{
+  width:80%;
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:center;
+  font-size:30rpx;
+  box-sizing:border-box;
+  padding-bottom:20px;
+  padding-top: 20px;
+  border: 2px solid #8ec6c5;
+  border-radius:10px;
+  margin-top: 10px;
+}
+.tfimg{
+ width:100rpx;
+ height:100rpx;
+}
+.tfview{
+  padding-left: 20rpx;
+  width:100rpx;
+  height:100rpx;
+}
+.tftxtview{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  padding-left: 20rpx;
+  font-size: 35rpx;
+}

@@ -1,120 +1,104 @@
-//index.js
-const app = getApp()
+// pages/addFunction/addFunction.js
+
+const code = `// 云函数入口函数
+exports.main = (event, context) => {
+  console.log(event)
+  console.log(context)
+  return {
+    sum: event.a + event.b
+  }
+}`
 
 Page({
   data: {
-    avatarUrl: './user-unlogin.png',
-    userInfo: {},
-    logged: false,
-    takeSession: false,
-    requestResult: ''
+    menulist:[
+      {
+        "name":"实时疫情",
+        "img":"images/ssyq.png"
+        //"navurl":"../ssyq/ssyq"
+      },
+      {
+        "name":"同行查询",
+        "img":"images/txcx.png",
+        "navurl":"../txcx/txcx"
+      },
+      {
+        "name":"定点医院",
+        "img":"images/ddyy.png"
+      },
+      {
+        "name":"心理疏导",
+        "img":"images/xlsd.png"
+      },
+      {
+        "name":"辟谣求真",
+        "img":"images/pyqz.png"
+      },
+      {
+        "name":"疫情科普",
+        "img":"images/yqkp.png"
+      },
+    ]
   },
 
-  onLoad: function() {
-    if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
-      })
-      return
-    }
+  Query:function(what){
+    console.log("Query")
+    const db = wx.cloud.database();
+    db.collection('2019ncov').where({
+     t_no:"G572"
+    })
+    .get({
+      success: function(res) {
+        console.log(res.data)
+      },
+      fail: err => {
+        console.error('失败：', err)
+      }
+    })
 
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              this.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
-              })
-            }
-          })
-        }
+  },
+
+
+
+  onLoad: function (options) {
+
+  },
+
+  copyCode: function() {
+    wx.setClipboardData({
+      data: code,
+      success: function () {
+        wx.showToast({
+          title: '复制成功',
+        })
       }
     })
   },
 
-  onGetUserInfo: function(e) {
-    if (!this.data.logged && e.detail.userInfo) {
-      this.setData({
-        logged: true,
-        avatarUrl: e.detail.userInfo.avatarUrl,
-        userInfo: e.detail.userInfo
-      })
-    }
-  },
-
-  onGetOpenid: function() {
-    // 调用云函数
+  testFunction() {
     wx.cloud.callFunction({
-      name: 'login',
-      data: {},
+      name: 'sum',
+      data: {
+        a: 1,
+        b: 2
+      },
       success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
-        app.globalData.openid = res.result.openid
-        wx.navigateTo({
-          url: '../userConsole/userConsole',
+        wx.showToast({
+          title: '调用成功',
+        })
+        this.setData({
+          result: JSON.stringify(res.result)
         })
       },
       fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
-        wx.navigateTo({
-          url: '../deployFunctions/deployFunctions',
+        wx.showToast({
+          icon: 'none',
+          title: '调用失败',
         })
-      }
-    })
-  },
-
-  // 上传图片
-  doUpload: function () {
-    // 选择图片
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success: function (res) {
-
-        wx.showLoading({
-          title: '上传中',
-        })
-
-        const filePath = res.tempFilePaths[0]
-        
-        // 上传图片
-        const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
-        wx.cloud.uploadFile({
-          cloudPath,
-          filePath,
-          success: res => {
-            console.log('[上传文件] 成功：', res)
-
-            app.globalData.fileID = res.fileID
-            app.globalData.cloudPath = cloudPath
-            app.globalData.imagePath = filePath
-            
-            wx.navigateTo({
-              url: '../storageConsole/storageConsole'
-            })
-          },
-          fail: e => {
-            console.error('[上传文件] 失败：', e)
-            wx.showToast({
-              icon: 'none',
-              title: '上传失败',
-            })
-          },
-          complete: () => {
-            wx.hideLoading()
-          }
-        })
-
-      },
-      fail: e => {
-        console.error(e)
+        console.error('[云函数] [sum] 调用失败：', err)
       }
     })
   },
 
 })
+

@@ -1,0 +1,32 @@
+
+<view class="searchcontainer">
+  
+  <view class="inputview">
+    <input class="weui-input" auto-focus name="searchname" placeholder=" 请输入航班号，车次，车牌号……" bindinput='SearchInput'></input>
+  </view>
+  <view class="btnview">
+    <button class="btn-search" bindtap="btn_search" style="width: 100rpx;">
+      <image class='img-search' src='images/search.png'/>
+    </button>
+  </view>
+</view>
+
+<view class="tfcontainer">
+  <view class='tfitem' wx:for="{{source}}" wx:for-index="idx" wx:for-item="tf">
+    <view class='tfview'>
+      <navigator url="">
+      <image class='tfimg' src='{{tf.img}}'/>
+      </navigator>
+    </view>
+    <view class='tftxtview'>
+      <view style="padding-top: 5px;">{{tf.date}}</view>
+      <view style="padding-top: 5px;">{{tf.no}}</view>
+      <view style="padding-top: 5px;" wx:if="{{tf.no_sub}}!=''">{{tf.no_sub}}</view>
+      <view style="padding-top: 5px;">{{tf.start}} 到 {{tf.end}}</view>
+      <view style="padding-top: 5px;" wx:if="{{tf.memo}}!=''">{{tf.memo}}</view>
+    </view>
+    
+  </view>
+</view>
+
+<button bindtap="test">测试</button>
