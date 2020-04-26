@@ -2,6 +2,33 @@
 
 @import "../../style/guide.wxss";
 
+.txtview{
+  padding-left: 50rpx;
+  width:650rpx;
+  padding-right: 50rpx;
+}
+
+.text{
+  text-align:left;
+}
+
+
+.yqcontainer{
+  width:750rpx;
+  text-align:center;
+}
+
+.yqimg0{
+  
+  width: 316px;
+  height: 590px;
+}
+
+.yqimg{
+  
+  height: 10675px;
+}
+
 
 .menucontainer{
   display:flex;
@@ -108,15 +135,4 @@
 .menuview{
 width:60px;
 height:60px;
-}
-
-.txtview1{
-  padding-top: 10rpx;
-  padding-left: 75rpx;
-  width:600rpx;
-  padding-right: 75rpx;
-}
-
-.text{
-  text-align:left;
 }

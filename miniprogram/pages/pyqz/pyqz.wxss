@@ -1,0 +1,72 @@
+/* pages/addFunction/addFunction.wxss */
+
+@import "../../style/guide.wxss";
+
+
+.rmcontainer{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  height:100%;
+  width:100%;
+  justify-content:space-around;
+  align-content: space-between;
+}
+
+
+
+
+.txtview{
+  padding-top: 10rpx;
+  padding-left: 75rpx;
+  width:600rpx;
+  padding-right: 75rpx;
+}
+
+.text{
+  text-align:left;
+}
+
+
+
+.rmitem{
+  width:80%;
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:center;
+  box-sizing:border-box;
+  padding-bottom:10px;
+  padding-top: 10px;
+  border: 2px solid #8ec6c5;
+  border-radius:10px;
+  margin-top: 10px;
+}
+.rmimg{
+ width:100rpx;
+ height:100rpx;
+}
+.rmview{
+  padding-left: 20rpx;
+  width:100rpx;
+  height:100rpx;
+}
+.rmtxtview{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+}
+
+.cityitem{
+  padding-left: 75rpx;
+  font-size:30rpx;
+
+}
+
+.divLine{
+  background: #9ecac9;
+  width: 98%;
+  height: 1px;
+ }

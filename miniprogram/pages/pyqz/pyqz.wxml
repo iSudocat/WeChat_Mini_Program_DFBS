@@ -1,0 +1,47 @@
+
+<!-- <view class="searchcontainer">
+  
+  <view class="inputview">
+    <input class="weui-input" auto-focus name="searchname" placeholder=" 请输入查询信息" bindinput='SearchInput'></input>
+  </view>
+  <view class="btnview">
+    <button class="btn-search" bindtap="btn_search" style="width: 100rpx;">
+      <image class='img-search' src='images/search.png'/>
+    </button>
+  </view>
+  
+</view> -->
+
+
+<view class="rmcontainer">
+   
+  <view class='rmitem' wx:for="{{source}}" wx:for-index="idx" wx:for-item="rm">
+    <view class='rmview'>
+        <view wx:if="{{rm.rumorType==0}}">
+        <image class='rmimg'  src='images/cross.png'/>
+      </view>
+      <view wx:elif="{{rm.rumorType==1}}">
+        <image class='rmimg'  src='images/tick.png'/>
+      </view>
+      <view wx:elif="{{rm.rumorType==2}}">
+        <image class='rmimg'  src='images/question.png'/>
+      </view>
+    </view>
+    <view class='rmtxtview'>
+      <view style="">{{rm.title}}</view>
+      <view class="divLine"></view>
+      <view style="padding-top: 5px;">{{rm.body}}</view>
+      <view style="padding-top: 5px; font-weight:bold;">结论：{{rm.mainSummary}}</view>
+    </view>
+    
+  </view>
+  
+</view>
+
+<view class="txtview">
+    <text class="text">
+      （来源：丁香园）
+    </text>
+</view> 
+
+<!-- <button class="test" bindtap="test" style="width: 100rpx;">测试</button> -->

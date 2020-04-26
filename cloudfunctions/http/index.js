@@ -1,9 +1,9 @@
 // 云函数入口文件
 const axios = require('axios')
 
-async function getdata() {
+async function getdata(url) {
   try {
-    var res = await axios.get('https://c.m.163.com/ug/api/wuhan/app/data/list-total')
+    var res = await axios.get(url)
     return res.data.data
   } catch (err) {
     console.log(err)
@@ -14,5 +14,5 @@ async function getdata() {
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return getdata()
+  return getdata(event.url)
 }

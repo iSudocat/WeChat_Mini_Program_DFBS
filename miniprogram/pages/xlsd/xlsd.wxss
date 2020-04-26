@@ -3,8 +3,7 @@
 @import "../../style/guide.wxss";
 
 
-
-.tfcontainer{
+.hpcontainer{
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
@@ -18,8 +17,8 @@
   padding-top: 20px;
   display:flex;
   flex-direction:row;
-  flex-wrap:nowrap;
-  height:60px;
+  flex-wrap:wrap;
+  height:50px;
   width:100%;
   justify-content:center;
 }
@@ -51,38 +50,49 @@
   height:40rpx;
 }
 
-.tfitem{
+.hpitem{
   width:80%;
   display:flex;
   flex-direction:row;
   justify-content:flex-start;
   align-items:center;
-  font-size:30rpx;
   box-sizing:border-box;
-  padding-bottom:20px;
-  padding-top: 20px;
+  padding-bottom:10px;
+  padding-top: 10px;
   border: 2px solid #8ec6c5;
   border-radius:10px;
   margin-top: 10px;
 }
-.tfimg{
+.hpimg{
  width:100rpx;
  height:100rpx;
 }
-.tfview{
+.hpview{
   padding-left: 20rpx;
   width:100rpx;
   height:100rpx;
 }
-.tftxtview{
+.hptxtview{
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
   padding-left: 20rpx;
-  font-size: 35rpx;
+  font-size: 30rpx;
 }
 
-.txtview{
+.cityitem{
+  padding-left: 75rpx;
+  font-size:30rpx;
+
+}
+
+.divLine{
+  background: #9ecac9;
+  width: 98%;
+  height: 1px;
+ }
+
+ .txtview{
   padding-top: 10rpx;
   padding-left: 75rpx;
   width:600rpx;

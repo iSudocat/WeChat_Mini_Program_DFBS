@@ -70,3 +70,9 @@
 
   <view style="font-size: 15px; color:#616161;">最后更新时间：{{lastUpdateTime}}</view>
 </view>
+
+<view class="txtview1">
+    <text class="text">
+      （来源：网易 - 新冠肺炎疫情动态）
+    </text>
+</view> 

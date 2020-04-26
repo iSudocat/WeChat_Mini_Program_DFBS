@@ -1,0 +1,39 @@
+
+<!-- <view class="searchcontainer">
+  
+  <view class="inputview">
+    <input class="weui-input" auto-focus name="searchname" placeholder=" 请输入查询信息" bindinput='SearchInput'></input>
+  </view>
+  <view class="btnview">
+    <button class="btn-search" bindtap="btn_search" style="width: 100rpx;">
+      <image class='img-search' src='images/search.png'/>
+    </button>
+  </view>
+  
+</view> -->
+
+<view class="cityitem">
+<view style="padding-top: 5px;">当前定位省份：{{city}}</view>
+</view>
+<view class="hpcontainer">
+  <view class='hpitem' wx:for="{{source}}" wx:for-index="idx" wx:for-item="hp">
+    <view class='hpview'>
+        <image class='hpimg'  src='images/xlsd.png'/>
+    </view>
+    <view class='hptxtview'>
+      <view style="">{{hp.organization}}</view>
+      <view class="divLine"></view>
+      <view style="padding-top: 5px;">电话：{{hp.tel}}</view>
+      <view style="padding-top: 5px;">工作时间：{{hp.time}}</view>
+    </view>
+    
+  </view>
+</view>
+
+<view class="txtview">
+    <text class="text">
+      （来源：中国医学科学院医学信息研究所.全国新型冠状病毒肺炎疫情心理援助热线数据集.国家人口健康科学数据中心数据仓储）
+    </text>
+</view> 
+
+<!-- <button class="test" bindtap="test" style="width: 100rpx;">测试</button> -->

@@ -26,3 +26,9 @@
     
   </view>
 </view>
+
+<view class="txtview">
+    <text class="text">
+      （来源：新型冠状病毒肺炎确诊患者同行程查询工具）
+    </text>
+</view> 

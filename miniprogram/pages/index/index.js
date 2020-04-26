@@ -24,19 +24,23 @@ Page({
       },
       {
         "name":"定点医院",
-        "img":"images/ddyy.png"
+        "img":"images/ddyy.png",
+        "navurl":"../ddyy/ddyy"
       },
       {
         "name":"心理疏导",
-        "img":"images/xlsd.png"
+        "img":"images/xlsd.png",
+        "navurl":"../xlsd/xlsd"
       },
       {
         "name":"辟谣求真",
-        "img":"images/pyqz.png"
+        "img":"images/pyqz.png",
+        "navurl":"../pyqz/pyqz"
       },
       {
         "name":"疫情科普",
-        "img":"images/yqkp.png"
+        "img":"images/yqkp.png",
+        "navurl":"../yqkp/yqkp"
       },
     ]
   },
@@ -45,7 +49,7 @@ Page({
     console.log('ceshi')
     wx.cloud.callFunction({
       // 云函数名称
-      name: 'http'
+      name: 'getHospital'
     })
     .then(res => {
       console.log(res.result) 
